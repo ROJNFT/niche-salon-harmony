@@ -4,32 +4,8 @@ import { HeadSpaSection } from "@/components/HeadSpaSection";
 import { TeamSection } from "@/components/TeamSection";
 import Logo from "@/components/Logo";
 import { Sparkles } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
-import { useEffect, useState } from "react";
 
 const Index = () => {
-  const [api, setApi] = useState<any>();
-  const backgroundImages = [
-    "/lovable-uploads/9adb1708-340c-4a03-b2dc-add6e5523757.png",
-    "/lovable-uploads/5b18773a-f96b-4c93-b26b-bee2e2e008e9.png",
-    "/lovable-uploads/bec1ec6e-b54f-4693-a90c-fad3586e651b.png"
-  ];
-
-  useEffect(() => {
-    if (!api) return;
-
-    // Auto-advance carousel every 5 seconds
-    const interval = setInterval(() => {
-      api.scrollNext();
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [api]);
-
   const locations = [
     {
       name: "Niche Beauty Lounge",
@@ -51,30 +27,17 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative">
-        {/* Background Carousel */}
+        {/* Background Image */}
         <div className="absolute top-0 left-0 right-0 h-[calc(100%-80px)] overflow-hidden">
-          <Carousel
-            setApi={setApi}
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full h-full"
-          >
-            <CarouselContent className="h-full">
-              {backgroundImages.map((image, index) => (
-                <CarouselItem key={index} className="h-full relative">
-                  <img 
-                    src={image} 
-                    alt=""
-                    className="w-full h-full object-cover opacity-30"
-                    style={{ objectPosition: "center 25%" }}
-                  />
-                  <div className="absolute inset-0 bg-black/40" /> {/* Dark overlay */}
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+          <div className="relative h-full">
+            <img 
+              src="/lovable-uploads/9adb1708-340c-4a03-b2dc-add6e5523757.png"
+              alt=""
+              className="w-full h-full object-cover opacity-30"
+              style={{ objectPosition: "center 25%" }}
+            />
+            <div className="absolute inset-0 bg-black/40" /> {/* Dark overlay */}
+          </div>
           
           {/* Decorative Elements */}
           <div className="absolute top-0 left-0 w-64 h-64 transform -translate-x-1/2 -translate-y-1/2 bg-primary/5 rounded-full blur-3xl" />
