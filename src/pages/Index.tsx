@@ -24,7 +24,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-secondary overflow-hidden">
+      <section className="relative py-12 bg-secondary overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-0 w-64 h-64 transform -translate-x-1/2 -translate-y-1/2 bg-primary/5 rounded-full blur-3xl" />
@@ -38,8 +38,8 @@ const Index = () => {
         </div>
         
         <div className="container relative">
-          <div className="max-w-3xl mx-auto text-center mb-20">
-            <Logo className="h-48 w-auto mx-auto mb-12" />
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <Logo className="h-56 w-auto mx-auto mb-8" />
             <p className="text-xl text-muted-foreground mb-8">
               Experience luxury hair and beauty services at our two convenient Bakersfield locations.
             </p>
