@@ -8,16 +8,19 @@ export function HeadSpaSection() {
     {
       title: "60 min Scalp Spa",
       description: "Therapeutic scalp treatment designed to cleanse, nourish and rejuvenate the scalp.",
+      price: "Starts at $175",
       image: "/lovable-uploads/b92d305d-bae7-4f5c-9ca0-426b2d26a14c.png"
     },
     {
       title: "Scalp Spa + Facial",
       description: "Combines scalp care with a gentle facial cleansing process for total relaxation.",
+      price: "Prices vary",
       image: "/lovable-uploads/61ef72a6-2e0e-4a06-84b9-4d913e7ab2c4.png"
     },
     {
       title: "Dry Scalp Spa",
       description: "Perfect for extension clients who want to remove extra hair or those who are on the go.",
+      price: "Prices vary",
       image: "/lovable-uploads/241d20ae-b62f-42b8-aeb4-a753a83adb44.png"
     }
   ];
@@ -39,11 +42,14 @@ export function HeadSpaSection() {
               </div>
               <h3 className="text-xl font-serif mb-2">{service.title}</h3>
               <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
-              <Link to="/scalp-spa">
-                <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">
-                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                </Button>
-              </Link>
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-medium">{service.price}</span>
+                <Link to="/scalp-spa">
+                  <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">
+                    Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           ))}
         </div>
@@ -57,4 +63,4 @@ export function HeadSpaSection() {
       </div>
     </section>
   );
-};
+}
