@@ -63,10 +63,7 @@ const Index = () => {
         
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Logo className="h-56 w-auto mx-auto mb-8" />
-            <p className="text-xl text-muted-foreground mb-8">
-              Experience luxury hair and beauty services at our two convenient Bakersfield locations.
-            </p>
+            <Logo className="h-56 w-auto mx-auto mb-4" />
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <span className="w-8 h-px bg-muted-foreground/30" />
               <span>ESTABLISHED 2020</span>
