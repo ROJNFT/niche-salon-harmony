@@ -25,7 +25,11 @@ const Index = () => {
       <section className="relative py-20 bg-secondary">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-serif mb-6">Welcome to Niche Beauty</h1>
+            <img 
+              src="/lovable-uploads/99c706fc-1025-4d8e-adee-606c08313fac.png" 
+              alt="Niche Beauty Lounge" 
+              className="h-24 mx-auto mb-8"
+            />
             <p className="text-xl text-muted-foreground">
               Experience luxury hair and beauty services at our two convenient Bakersfield locations.
             </p>
