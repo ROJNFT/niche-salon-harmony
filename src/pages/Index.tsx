@@ -21,24 +21,45 @@ const Index = () => {
         </div>
         
         <div className="container relative">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <Logo className="h-56 w-auto mx-auto mb-16" />
             
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Button
-                size="lg"
-                className="text-lg px-8 py-6 h-auto"
+            <div className="grid md:grid-cols-2 gap-8">
+              <button
                 onClick={() => navigate('/location/lounge')}
+                className="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:shadow-xl"
               >
-                Visit Niche Beauty Lounge
-              </Button>
-              <Button
-                size="lg"
-                className="text-lg px-8 py-6 h-auto"
+                <div className="relative h-64 w-full">
+                  <img 
+                    src="/lovable-uploads/fa9a2cb6-a297-4d0a-bcba-7bf6292529bb.png"
+                    alt="Niche Beauty Lounge" 
+                    className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-2xl font-serif">Niche Beauty Lounge</h3>
+                  <p className="mt-2 text-sm text-white/80">5393 Truxtun Ave, Bakersfield</p>
+                </div>
+              </button>
+
+              <button
                 onClick={() => navigate('/location/spa')}
+                className="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:shadow-xl"
               >
-                Visit Niche Beauty Spa
-              </Button>
+                <div className="relative h-64 w-full">
+                  <img 
+                    src="/lovable-uploads/03cfe203-5dc8-4a7f-bda3-c535b47c837b.png"
+                    alt="Niche Beauty Spa" 
+                    className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-2xl font-serif">Niche Beauty Spa</h3>
+                  <p className="mt-2 text-sm text-white/80">5060 California Ave, Bakersfield</p>
+                </div>
+              </button>
             </div>
           </div>
         </div>
