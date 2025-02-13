@@ -11,8 +11,8 @@ interface LocationCardProps {
 export function LocationCard({ name, address, features, image }: LocationCardProps) {
   return (
     <div className="location-card animate-fade-up">
-      <div className="relative h-64 w-full overflow-hidden rounded-lg mb-4">
-        <img src={image} alt={name} className="object-contain w-full h-full" />
+      <div className="relative h-48 w-full overflow-hidden rounded-lg mb-4">
+        <img src={image} alt={name} className="object-cover w-full h-full" />
       </div>
       <h3 className="text-2xl font-serif mb-2">{name}</h3>
       <div className="flex items-center text-muted-foreground mb-4">
