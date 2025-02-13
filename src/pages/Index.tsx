@@ -2,6 +2,7 @@
 import { LocationCard } from "@/components/LocationCard";
 import { HeadSpaSection } from "@/components/HeadSpaSection";
 import { TeamSection } from "@/components/TeamSection";
+import Logo from "@/components/Logo";
 
 const Index = () => {
   const locations = [
@@ -25,11 +26,7 @@ const Index = () => {
       <section className="relative py-20 bg-secondary">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <img 
-              src="/lovable-uploads/99c706fc-1025-4d8e-adee-606c08313fac.png" 
-              alt="Niche Beauty Lounge" 
-              className="h-24 mx-auto mb-8"
-            />
+            <Logo className="h-24 w-auto mx-auto mb-8" />
             <p className="text-xl text-muted-foreground">
               Experience luxury hair and beauty services at our two convenient Bakersfield locations.
             </p>
