@@ -26,7 +26,7 @@ export function HeadSpaSection() {
   ];
 
   return (
-    <section className="py-20 bg-secondary">
+    <section className="py-12 bg-secondary">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center mb-12">
           <h2 className="text-4xl font-serif mb-4">Head Spa Experience</h2>
