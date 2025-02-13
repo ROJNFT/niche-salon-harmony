@@ -4,8 +4,32 @@ import { HeadSpaSection } from "@/components/HeadSpaSection";
 import { TeamSection } from "@/components/TeamSection";
 import Logo from "@/components/Logo";
 import { Sparkles } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [api, setApi] = useState<any>();
+  const backgroundImages = [
+    "/lovable-uploads/9adb1708-340c-4a03-b2dc-add6e5523757.png",
+    "/lovable-uploads/5b18773a-f96b-4c93-b26b-bee2e2e008e9.png",
+    "/lovable-uploads/bec1ec6e-b54f-4693-a90c-fad3586e651b.png"
+  ];
+
+  useEffect(() => {
+    if (!api) return;
+
+    // Auto-advance carousel every 5 seconds
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [api]);
+
   const locations = [
     {
       name: "Niche Beauty Lounge",
@@ -27,29 +51,30 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-12 bg-secondary overflow-hidden">
-        {/* Background Image Collage */}
+        {/* Background Carousel */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 grid grid-cols-2 gap-4 opacity-[0.03]">
-            <div className="relative h-full">
-              <img 
-                src="/lovable-uploads/9adb1708-340c-4a03-b2dc-add6e5523757.png" 
-                alt=""
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div className="grid grid-rows-2 gap-4">
-              <img 
-                src="/lovable-uploads/5b18773a-f96b-4c93-b26b-bee2e2e008e9.png" 
-                alt=""
-                className="object-cover w-full h-full"
-              />
-              <img 
-                src="/lovable-uploads/bec1ec6e-b54f-4693-a90c-fad3586e651b.png" 
-                alt=""
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
+          <Carousel
+            setApi={setApi}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full h-full"
+          >
+            <CarouselContent className="h-full">
+              {backgroundImages.map((image, index) => (
+                <CarouselItem key={index} className="h-full">
+                  <div className="absolute inset-0 bg-black/40" /> {/* Dark overlay */}
+                  <img 
+                    src={image} 
+                    alt=""
+                    className="w-full h-full object-cover opacity-30"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          
           {/* Decorative Elements */}
           <div className="absolute top-0 left-0 w-64 h-64 transform -translate-x-1/2 -translate-y-1/2 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-0 w-64 h-64 transform translate-x-1/2 translate-y-1/2 bg-primary/5 rounded-full blur-3xl" />
