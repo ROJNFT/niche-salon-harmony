@@ -8,13 +8,13 @@ const Index = () => {
     {
       name: "Niche Beauty Lounge",
       address: "5393 Truxtun Ave, Bakersfield, CA 93309",
-      image: "/lovable-uploads/a0a127ae-66b4-4691-a245-004b1bc906e1.png",
+      image: "/lovable-uploads/6ad61003-03b0-460d-944f-4c7e6b51882c.png",
       features: ["Hair Services", "Nail Services", "Esthetician Services"]
     },
     {
       name: "Niche Beauty Spa",
       address: "5060 California Ave STE 110, Bakersfield, CA 93309",
-      image: "/lovable-uploads/61ef72a6-2e0e-4a06-84b9-4d913e7ab2c4.png",
+      image: "/lovable-uploads/03cfe203-5dc8-4a7f-bda3-c535b47c837b.png",
       features: ["Hair Services", "Nail Services", "Head Spa Treatments"]
     }
   ];
