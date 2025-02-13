@@ -44,8 +44,12 @@ export function HeadSpaSection() {
               <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
               <div className="flex justify-between items-center">
                 <span className="text-sm font-medium">{service.price}</span>
-                <Link to="/scalp-spa">
-                  <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">
+                <Link to="/scalp-spa" className="no-underline">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="transition-colors duration-200 border-primary/20 hover:bg-primary/10 hover:text-primary-foreground active:bg-primary/20"
+                  >
                     Learn More <ArrowRight className="ml-1 h-4 w-4" />
                   </Button>
                 </Link>
