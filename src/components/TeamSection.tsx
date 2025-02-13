@@ -1,7 +1,7 @@
 
 import { useNavigate } from 'react-router-dom';
 import { Button } from './ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Instagram } from 'lucide-react';
 
 interface TeamMember {
   name: string;
@@ -14,10 +14,13 @@ export function TeamSection({ showFullList = false }: { showFullList?: boolean }
   const team: TeamMember[] = [
     { name: "Ashley", role: "Stylist/Scalp Spa" },
     { name: "Beverly", role: "Stylist" },
-    { name: "Danielle", role: "Stylist/Scalp Spa", instagram: "@hairbydeejul" },
-    { name: "Emily", role: "Stylist/Scalp Spa", instagram: "@honey_rose" },
+    { name: "Danielle", role: "Stylist/Scalp Spa", instagram: "hairbydeejul" },
+    { name: "Emily", role: "Stylist/Scalp Spa", instagram: "honey_roee" },
     { name: "Jesse", role: "Stylist" },
-    { name: "Jocelyn", role: "Stylist/Scalp Spa", instagram: "@joscolors" }
+    { name: "Jocelyn", role: "Stylist/Scalp Spa", instagram: "josscolors" },
+    { name: "Maria", role: "Stylist", instagram: "mariaa_thestylist" },
+    { name: "Rudi", role: "Stylist", instagram: "rudidoeshair" },
+    { name: "Trinity", role: "Stylist", instagram: "trins.chair" }
   ];
 
   if (!showFullList) {
@@ -51,11 +54,12 @@ export function TeamSection({ showFullList = false }: { showFullList?: boolean }
           {member.instagram && (
             <a 
               href={`https://instagram.com/${member.instagram}`} 
-              className="text-sm text-primary hover:opacity-80 inline-flex items-center gap-1"
+              className="inline-flex items-center gap-2 text-sm text-primary hover:opacity-80 transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {member.instagram}
+              <Instagram className="h-4 w-4" />
+              <span>@{member.instagram}</span>
             </a>
           )}
         </div>
