@@ -48,9 +48,9 @@ export function TeamSection({ showFullList = false }: { showFullList?: boolean }
     
     // Spa Staff
     // Hair Stylists
-    { name: "Ashley Zimmerman", role: "Hair Stylist", location: 'spa' },
-    { name: "Danielle Puente", role: "Hair Stylist", location: 'spa' },
-    { name: "Trinity Vasquez", role: "Hair Stylist", location: 'spa', instagram: "trins.chair" },
+    { name: "Ashley Zimmerman", role: "Hair Stylist & Spa Specialist", location: 'spa' },
+    { name: "Danielle Puente", role: "Hair Stylist & Spa Specialist", location: 'spa' },
+    { name: "Trinity Vasquez", role: "Hair Stylist & Spa Specialist", location: 'spa', instagram: "trins.chair" },
     { name: "Robin Enos", role: "Hair Stylist", location: 'spa' },
     { name: "Kenny Booker", role: "Hair Stylist", location: 'spa' },
     { name: "Beverly", role: "Hair Stylist", location: 'spa' },
