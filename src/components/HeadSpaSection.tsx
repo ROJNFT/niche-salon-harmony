@@ -1,4 +1,7 @@
 
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+
 export function HeadSpaSection() {
   const services = [
     {
@@ -38,9 +41,18 @@ export function HeadSpaSection() {
               </div>
               <h3 className="text-xl font-serif mb-2">{service.title}</h3>
               <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
-              <span className="text-sm font-medium">{service.price}</span>
+              <div className="flex justify-between items-center">
+                <span className="text-sm font-medium">{service.price}</span>
+              </div>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-12">
+          <Link to="/scalp-spa">
+            <Button variant="outline" className="bg-white hover:bg-accent border-primary/20 text-primary font-serif px-8">
+              Learn More About Our Scalp Spa Services
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
