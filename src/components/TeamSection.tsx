@@ -98,7 +98,9 @@ export function TeamSection({ showFullList = false }: { showFullList?: boolean }
                 <div className="flex items-center gap-2 mb-2">
                   <h3 className="font-medium text-xl">{member.name}</h3>
                   {member.bothLocations && (
-                    <CircleDot className="h-4 w-4 text-primary" title="Available at both locations" />
+                    <span title="Available at both locations">
+                      <CircleDot className="h-4 w-4 text-primary" />
+                    </span>
                   )}
                 </div>
                 <p className="text-muted-foreground mb-3">{member.role}</p>
