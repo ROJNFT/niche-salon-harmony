@@ -25,8 +25,8 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative py-20 bg-secondary">
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <Logo className="h-24 w-auto mx-auto mb-8" />
+          <div className="max-w-3xl mx-auto text-center mb-20">
+            <Logo className="h-40 w-auto mx-auto mb-12" />
             <p className="text-xl text-muted-foreground">
               Experience luxury hair and beauty services at our two convenient Bakersfield locations.
             </p>
