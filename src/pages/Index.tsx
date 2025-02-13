@@ -26,27 +26,51 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-[#1A1F2C] min-h-[calc(100vh-80px)]">
-        {/* Decorative Elements */}
-        <div className="absolute top-0 left-0 w-64 h-64 transform -translate-x-1/2 -translate-y-1/2 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-64 h-64 transform translate-x-1/2 translate-y-1/2 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/4 right-1/4 text-primary/10">
-          <Sparkles className="w-8 h-8" />
-        </div>
-        <div className="absolute bottom-1/4 left-1/4 text-primary/10">
-          <Sparkles className="w-8 h-8" />
+      <section className="relative py-12 bg-secondary overflow-hidden">
+        {/* Background Image Collage */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 grid grid-cols-2 gap-4 opacity-[0.03]">
+            <div className="relative h-full">
+              <img 
+                src="/lovable-uploads/9adb1708-340c-4a03-b2dc-add6e5523757.png" 
+                alt=""
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <div className="grid grid-rows-2 gap-4">
+              <img 
+                src="/lovable-uploads/5b18773a-f96b-4c93-b26b-bee2e2e008e9.png" 
+                alt=""
+                className="object-cover w-full h-full"
+              />
+              <img 
+                src="/lovable-uploads/bec1ec6e-b54f-4693-a90c-fad3586e651b.png" 
+                alt=""
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+          {/* Decorative Elements */}
+          <div className="absolute top-0 left-0 w-64 h-64 transform -translate-x-1/2 -translate-y-1/2 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-64 h-64 transform translate-x-1/2 translate-y-1/2 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-1/4 text-primary/10">
+            <Sparkles className="w-8 h-8" />
+          </div>
+          <div className="absolute bottom-1/4 left-1/4 text-primary/10">
+            <Sparkles className="w-8 h-8" />
+          </div>
         </div>
         
-        <div className="container py-12 relative">
+        <div className="container relative">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <Logo className="h-56 w-auto mx-auto mb-8" />
-            <p className="text-xl text-muted mb-8">
+            <p className="text-xl text-muted-foreground mb-8">
               Experience luxury hair and beauty services at our two convenient Bakersfield locations.
             </p>
-            <div className="flex items-center justify-center gap-2 text-sm text-muted">
-              <span className="w-8 h-px bg-muted/30" />
+            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <span className="w-8 h-px bg-muted-foreground/30" />
               <span>ESTABLISHED 2020</span>
-              <span className="w-8 h-px bg-muted/30" />
+              <span className="w-8 h-px bg-muted-foreground/30" />
             </div>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
