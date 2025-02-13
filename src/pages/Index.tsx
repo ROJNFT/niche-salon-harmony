@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 const Index = () => {
   const [api, setApi] = useState<any>();
   const backgroundImages = [
+    "/lovable-uploads/9adb1708-340c-4a03-b2dc-add6e5523757.png",
     "/lovable-uploads/5b18773a-f96b-4c93-b26b-bee2e2e008e9.png",
     "/lovable-uploads/bec1ec6e-b54f-4693-a90c-fad3586e651b.png"
   ];
@@ -49,7 +50,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-secondary overflow-hidden">
+      <section className="relative py-12 bg-secondary overflow-hidden">
         {/* Background Carousel */}
         <div className="absolute inset-0 overflow-hidden">
           <Carousel
@@ -85,7 +86,7 @@ const Index = () => {
           </div>
         </div>
         
-        <div className="container pt-12">
+        <div className="container relative">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <Logo className="h-56 w-auto mx-auto mb-8" />
             <p className="text-xl text-muted-foreground mb-8">
@@ -97,7 +98,7 @@ const Index = () => {
               <span className="w-8 h-px bg-muted-foreground/30" />
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto translate-y-16">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {locations.map((location) => (
               <LocationCard key={location.name} {...location} />
             ))}
