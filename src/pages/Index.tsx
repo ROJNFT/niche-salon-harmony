@@ -63,7 +63,7 @@ const Index = () => {
         
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <Logo className="h-56 w-auto mx-auto mb-4" />
+            <Logo className="h-56 w-auto mx-auto mb-1" />
             <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
               <span className="w-8 h-px bg-muted-foreground/30" />
               <span>ESTABLISHED 2020</span>
