@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export function HeadSpaSection() {
   const services = [
@@ -43,6 +44,11 @@ export function HeadSpaSection() {
               <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
               <div className="flex justify-between items-center">
                 <span className="text-sm font-medium">{service.price}</span>
+                <Link to="/scalp-spa">
+                  <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">
+                    Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           ))}
