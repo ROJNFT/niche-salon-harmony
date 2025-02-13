@@ -53,13 +53,6 @@ export function HeadSpaSection() {
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
-          <Link to="/scalp-spa">
-            <Button variant="outline" className="bg-white hover:bg-accent border-primary/20 text-primary font-serif px-8">
-              Learn More About Our Scalp Spa Services
-            </Button>
-          </Link>
-        </div>
       </div>
     </section>
   );
