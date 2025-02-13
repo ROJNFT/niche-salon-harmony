@@ -86,9 +86,14 @@ export function TeamSection({ showFullList = false }: { showFullList?: boolean }
   // First, get the owner
   const owner = team.find(member => member.isOwner);
   
-  // Then group the rest by location and role
-  const loungeStaff = team.filter(member => member.location === 'lounge' || member.bothLocations);
-  const spaStaff = team.filter(member => member.location === 'spa' && !member.isOwner);
+  // Then group the rest by location and role - updating the filtering logic
+  const loungeStaff = team.filter(member => 
+    (member.location === 'lounge' || member.bothLocations) && !member.isOwner
+  );
+  
+  const spaStaff = team.filter(member => 
+    member.location === 'spa' && !member.isOwner
+  );
 
   const groupByRole = (staff: TeamMember[]) => {
     return staff.reduce((groups, member) => {
