@@ -20,21 +20,27 @@ const Team = () => {
             Back to Beauty
           </Button>
           
-          <div className="text-center mb-12">
-            <a 
-              href="https://instagram.com/nichebeautylounge.n.spa" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline" className="gap-2">
+          <h1 className="text-4xl font-serif text-center mb-16">Our Team</h1>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center p-6 bg-primary text-primary-foreground rounded-lg col-span-full lg:col-span-1">
+              <h3 className="font-medium text-xl mb-2">Follow Our Salon</h3>
+              <p className="text-primary-foreground/80 mb-4">Stay updated with our latest styles and services</p>
+              <a 
+                href="https://instagram.com/nichebeautylounge.n.spa" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary-foreground hover:opacity-80 transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
-                Follow Us on Instagram
-              </Button>
-            </a>
+                <span>@nichebeautylounge.n.spa</span>
+              </a>
+            </div>
           </div>
 
-          <h1 className="text-4xl font-serif text-center mb-16">Our Team</h1>
-          <TeamSection showFullList={true} />
+          <div className="mt-8">
+            <TeamSection showFullList={true} />
+          </div>
         </div>
       </div>
     </div>
