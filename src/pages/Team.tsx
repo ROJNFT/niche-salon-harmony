@@ -17,7 +17,7 @@ const Team = () => {
             className="mb-8"
           >
             <ArrowLeft className="mr-2" />
-            Back to Home
+            Back to Beauty
           </Button>
           <h1 className="text-4xl font-serif text-center mb-16">Our Team</h1>
           <TeamSection showFullList={true} />
