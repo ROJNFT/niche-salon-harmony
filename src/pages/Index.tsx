@@ -64,15 +64,13 @@ const Index = () => {
             <CarouselContent className="h-full">
               {backgroundImages.map((image, index) => (
                 <CarouselItem key={index} className="h-full relative">
+                  <img 
+                    src={image} 
+                    alt=""
+                    className="w-full h-full object-cover opacity-30"
+                    style={{ objectPosition: "center 25%" }}
+                  />
                   <div className="absolute inset-0 bg-black/40" /> {/* Dark overlay */}
-                  <div className="absolute inset-0">
-                    <img 
-                      src={image} 
-                      alt=""
-                      className="w-full h-full object-cover opacity-30"
-                      style={{ objectPosition: "center 30%" }}
-                    />
-                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
