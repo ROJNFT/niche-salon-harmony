@@ -50,9 +50,9 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-12 bg-secondary overflow-hidden">
+      <section className="relative">
         {/* Background Carousel */}
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-[calc(100%-80px)] overflow-hidden">
           <Carousel
             setApi={setApi}
             opts={{
@@ -86,7 +86,7 @@ const Index = () => {
           </div>
         </div>
         
-        <div className="container relative">
+        <div className="container py-12 relative">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <Logo className="h-56 w-auto mx-auto mb-8" />
             <p className="text-xl text-muted-foreground mb-8">
