@@ -48,7 +48,10 @@ export function TeamSection({ showFullList = false }: { showFullList?: boolean }
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {team.map((member) => (
-        <div key={member.name} className="text-center p-6 bg-secondary rounded-lg">
+        <div 
+          key={member.name} 
+          className="p-6 rounded-lg border border-primary/20 bg-white shadow-sm hover:shadow-md transition-all duration-200"
+        >
           <h3 className="font-medium text-xl mb-2">{member.name}</h3>
           <p className="text-muted-foreground mb-3">{member.role}</p>
           {member.instagram && (
