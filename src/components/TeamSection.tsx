@@ -17,7 +17,7 @@ export function TeamSection({ showFullList = false }: { showFullList?: boolean }
   
   const team: TeamMember[] = [
     // Owner
-    { name: "Vanessa Shaddy", role: "Owner & Spa Specialist", isOwner: true, location: 'spa' },
+    { name: "Vanessa Shaddy", role: "Owner & Spa Specialist", isOwner: true, location: 'spa', bothLocations: true },
     
     // Beauty Lounge Staff
     // Manicurists
@@ -48,9 +48,9 @@ export function TeamSection({ showFullList = false }: { showFullList?: boolean }
     
     // Spa Staff
     // Hair Stylists
-    { name: "Ashley Zimmerman", role: "Hair Stylist & Spa Specialist", location: 'spa' },
-    { name: "Danielle Puente", role: "Hair Stylist & Spa Specialist", location: 'spa' },
-    { name: "Trinity Vasquez", role: "Hair Stylist & Spa Specialist", location: 'spa', instagram: "trins.chair" },
+    { name: "Ashley Zimmerman", role: "Hair Stylist & Spa Specialist", location: 'spa', bothLocations: true },
+    { name: "Danielle Puente", role: "Hair Stylist & Spa Specialist", location: 'spa', bothLocations: true },
+    { name: "Trinity Vasquez", role: "Hair Stylist & Spa Specialist", location: 'spa', bothLocations: true, instagram: "trins.chair" },
     { name: "Robin Enos", role: "Hair Stylist", location: 'spa' },
     { name: "Kenny Booker", role: "Hair Stylist", location: 'spa' },
     { name: "Beverly", role: "Hair Stylist", location: 'spa' },
@@ -121,6 +121,7 @@ export function TeamSection({ showFullList = false }: { showFullList?: boolean }
           <div className="flex items-center gap-2 mb-2">
             <h3 className="font-medium text-xl">{owner.name}</h3>
             <Star className="h-4 w-4 text-primary" />
+            <CircleDot className="h-4 w-4 text-primary" />
           </div>
           <p className="text-muted-foreground">{owner.role}</p>
         </div>
@@ -179,6 +180,11 @@ export function TeamSection({ showFullList = false }: { showFullList?: boolean }
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <h3 className="font-medium text-xl">{member.name}</h3>
+                    {member.bothLocations && (
+                      <span title="Spa Specialist">
+                        <CircleDot className="h-4 w-4 text-primary" />
+                      </span>
+                    )}
                   </div>
                   <p className="text-muted-foreground mb-3">{member.role}</p>
                   {member.instagram && (
