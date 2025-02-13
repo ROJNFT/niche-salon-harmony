@@ -3,6 +3,7 @@ import { LocationCard } from "@/components/LocationCard";
 import { HeadSpaSection } from "@/components/HeadSpaSection";
 import { TeamSection } from "@/components/TeamSection";
 import Logo from "@/components/Logo";
+import { Sparkles } from "lucide-react";
 
 const Index = () => {
   const locations = [
@@ -23,13 +24,30 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-secondary">
-        <div className="container">
+      <section className="relative py-20 bg-secondary overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-0 w-64 h-64 transform -translate-x-1/2 -translate-y-1/2 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-64 h-64 transform translate-x-1/2 translate-y-1/2 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-1/4 text-primary/10">
+            <Sparkles className="w-8 h-8" />
+          </div>
+          <div className="absolute bottom-1/4 left-1/4 text-primary/10">
+            <Sparkles className="w-8 h-8" />
+          </div>
+        </div>
+        
+        <div className="container relative">
           <div className="max-w-3xl mx-auto text-center mb-20">
-            <Logo className="h-40 w-auto mx-auto mb-12" />
-            <p className="text-xl text-muted-foreground">
+            <Logo className="h-48 w-auto mx-auto mb-12" />
+            <p className="text-xl text-muted-foreground mb-8">
               Experience luxury hair and beauty services at our two convenient Bakersfield locations.
             </p>
+            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <span className="w-8 h-px bg-muted-foreground/30" />
+              <span>ESTABLISHED 2020</span>
+              <span className="w-8 h-px bg-muted-foreground/30" />
+            </div>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {locations.map((location) => (
