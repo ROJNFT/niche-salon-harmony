@@ -10,4 +10,14 @@ RUN apt-get update && \
 
 ARG CI NIXPACKS_METADATA NODE_ENV NPM_CONFIG_PRODUCTION SOURCE_COMMIT
 
-# Rest of your Dockerfile... 
+# Copy application files
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+# Build the application (if needed)
+RUN npm run build
+
+# Set the command to start your application
+CMD ["npm", "start"] 
