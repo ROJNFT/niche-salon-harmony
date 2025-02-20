@@ -1,6 +1,7 @@
 
 import { LocationCard } from "@/components/LocationCard";
 import { HeadSpaSection } from "@/components/HeadSpaSection";
+import { EstheticianSection } from "@/components/EstheticianSection";
 import { TeamSection } from "@/components/TeamSection";
 import Logo from "@/components/Logo";
 import { Sparkles } from "lucide-react";
@@ -66,8 +67,8 @@ const Location = () => {
         </div>
       </section>
 
-      {/* Head Spa Section */}
-      <HeadSpaSection />
+      {/* Conditional Section */}
+      {id === 'spa' ? <HeadSpaSection /> : <EstheticianSection />}
 
       {/* Team Section */}
       <TeamSection />
