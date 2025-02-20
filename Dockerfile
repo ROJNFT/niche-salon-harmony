@@ -1,23 +1,31 @@
-FROM ghcr.io/railwayapp/nixpacks:ubuntu-1727136237
+# Build stage
+FROM node:22-alpine as build
 
-WORKDIR /app/
+WORKDIR /app
 
-COPY .nixpacks/nixpkgs-e05605ec414618eab4a7a6aea8b38f6fbbcc8f08.nix .nixpacks/nixpkgs-e05605ec414618eab4a7a6aea8b38f6fbbcc8f08.nix
-RUN nix-env -if .nixpacks/nixpkgs-e05605ec414618eab4a7a6aea8b38f6fbbcc8f08.nix && nix-collect-garbage -d
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl wget
-
-ARG CI NIXPACKS_METADATA NODE_ENV NPM_CONFIG_PRODUCTION SOURCE_COMMIT
-
-# Copy application files
-COPY . .
+# Copy package files
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
-# Build the application (if needed)
+# Copy source code
+COPY . .
+
+# Build the application
 RUN npm run build
 
-# Set the command to start your application
-CMD ["npm", "start"] 
+# Production stage
+FROM nginx:alpine
+
+# Copy built assets from build stage
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Copy nginx configuration
+COPY ./nginx.conf /etc/nginx/nginx.conf
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
