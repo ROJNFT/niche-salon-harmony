@@ -1,5 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 
 const Logo = ({ className = "" }: { className?: string }) => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
     <svg 
       version="1.0" 
@@ -8,7 +15,10 @@ const Logo = ({ className = "" }: { className?: string }) => {
       height="144" 
       viewBox="0 0 144.000000 144.000000"
       preserveAspectRatio="xMidYMid meet"
-      className={className}
+      className={`${className} cursor-pointer`}
+      onClick={handleLogoClick}
+      role="button"
+      aria-label="Go to location selection"
     >
       <g transform="translate(0.000000,144.000000) scale(0.100000,-0.100000)"
       fill="currentColor" stroke="none">

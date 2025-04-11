@@ -1,9 +1,22 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export function EstheticianSection() {
+  const estheticianImages = [
+    "/lovable-uploads/esthetician1.jpg",
+    "/lovable-uploads/esthetician2.jpg",
+    "/lovable-uploads/esthetician4.jpg",
+  ];
+
   return (
     <section className="py-12 bg-secondary">
       <div className="container">
@@ -16,12 +29,24 @@ export function EstheticianSection() {
           </div>
           
           <div className="bg-white rounded-lg shadow-sm p-8">
-            <div className="relative h-64 w-full overflow-hidden rounded-lg mb-6">
-              <img 
-                src="/lovable-uploads/99c706fc-1025-4d8e-adee-606c08313fac.png" 
-                alt="Esthetician Services" 
-                className="object-cover w-full h-full"
-              />
+            <div className="relative rounded-lg mb-6 overflow-hidden">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  {estheticianImages.map((image, index) => (
+                    <CarouselItem key={index}>
+                      <div className="relative h-80 md:h-96 lg:h-[450px] w-full overflow-hidden rounded-lg">
+                        <img 
+                          src={image} 
+                          alt={`Esthetician Services ${index + 1}`} 
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10" />
+                <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10" />
+              </Carousel>
             </div>
             
             <div className="space-y-4">
@@ -39,22 +64,6 @@ export function EstheticianSection() {
                 <li>• Advanced skincare techniques</li>
                 <li>• Relaxing spa environment</li>
               </ul>
-              
-              <div className="flex items-center justify-between mt-6 pt-6 border-t">
-                <div>
-                  <p className="font-medium">Services from $85</p>
-                  <p className="text-sm text-muted-foreground">Various treatment options</p>
-                </div>
-                
-                <Link to="/esthetician" className="no-underline">
-                  <Button 
-                    variant="outline" 
-                    className="transition-colors duration-200 border-primary/20 hover:bg-primary/10 hover:text-primary-foreground active:bg-primary/20"
-                  >
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
             </div>
           </div>
         </div>

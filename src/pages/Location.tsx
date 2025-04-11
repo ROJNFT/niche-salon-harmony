@@ -1,10 +1,9 @@
-
 import { LocationCard } from "@/components/LocationCard";
 import { HeadSpaSection } from "@/components/HeadSpaSection";
 import { EstheticianSection } from "@/components/EstheticianSection";
 import { TeamSection } from "@/components/TeamSection";
 import Logo from "@/components/Logo";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Phone } from "lucide-react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
@@ -16,14 +15,14 @@ const Location = () => {
     lounge: {
       name: "Niche Beauty Lounge",
       address: "5393 Truxtun Ave, Bakersfield, CA 93309",
-      phone: "(661) 587-7777",
-      image: "/lovable-uploads/fa9a2cb6-a297-4d0a-bcba-7bf6292529bb.png",
+      phone: "(661) 327-5393",
+      image: "/lovable-uploads/Front Photo.jpg",
       features: ["Hair Services", "Nail Services", "Esthetician Services"]
     },
     spa: {
       name: "Niche Beauty Spa",
       address: "5060 California Ave STE 110, Bakersfield, CA 93309",
-      phone: "(661) 282-5772",
+      phone: "(661) 836-9775",
       image: "/lovable-uploads/03cfe203-5dc8-4a7f-bda3-c535b47c837b.png",
       features: ["Hair Services", "Nail Services", "Head Spa Treatments"]
     }
@@ -34,6 +33,11 @@ const Location = () => {
   if (!location) {
     return <div>Location not found</div>;
   }
+
+  // Function to format phone number for tel: link
+  const formatPhoneForCall = (phone: string) => {
+    return phone.replace(/\D/g, ''); // Remove all non-digits
+  };
 
   return (
     <div className="min-h-screen">
@@ -77,9 +81,13 @@ const Location = () => {
       <section className="py-20 bg-primary text-primary-foreground text-center">
         <div className="container">
           <h2 className="text-4xl font-serif mb-6">Ready to Experience Niche Beauty?</h2>
-          <button className="bg-white text-primary px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all">
-            Book Your Appointment
-          </button>
+          <a 
+            href={`tel:${formatPhoneForCall(location.phone)}`} 
+            className="inline-flex items-center bg-white text-primary px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all"
+          >
+            <Phone className="w-5 h-5 mr-2" />
+            Call {location.phone}
+          </a>
         </div>
       </section>
     </div>

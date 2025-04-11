@@ -1,4 +1,3 @@
-
 import Logo from "@/components/Logo";
 import { Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +5,26 @@ import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const navigate = useNavigate();
+
+  // Function to create a Google Maps URL from an address
+  const getGoogleMapsUrl = (address: string) => {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  };
+
+  // Address data
+  const loungeAddress = "5393 Truxtun Ave, Bakersfield, CA 93309";
+  const spaAddress = "5060 California Ave, Bakersfield, CA 93309";
+
+  // Handler for location card click
+  const handleLocationClick = (path: string) => {
+    navigate(path);
+  };
+
+  // Handler for address click
+  const handleAddressClick = (e: React.MouseEvent<HTMLAnchorElement>, address: string) => {
+    e.stopPropagation(); // Prevent the card click from triggering
+    window.open(getGoogleMapsUrl(address), '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <div className="min-h-screen">
@@ -26,12 +45,12 @@ const Index = () => {
             
             <div className="grid md:grid-cols-2 gap-8">
               <button
-                onClick={() => navigate('/location/lounge')}
+                onClick={() => handleLocationClick('/location/lounge')}
                 className="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:shadow-xl"
               >
                 <div className="relative h-64 w-full">
                   <img 
-                    src="/lovable-uploads/fa9a2cb6-a297-4d0a-bcba-7bf6292529bb.png"
+                    src="/lovable-uploads/Front Photo.jpg"
                     alt="Niche Beauty Lounge" 
                     className="h-full w-full object-cover transition-transform group-hover:scale-105"
                   />
@@ -39,12 +58,18 @@ const Index = () => {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-2xl font-serif">Niche Beauty Lounge</h3>
-                  <p className="mt-2 text-sm text-white/80">5393 Truxtun Ave, Bakersfield</p>
+                  <a 
+                    href="#" 
+                    onClick={(e) => handleAddressClick(e, loungeAddress)}
+                    className="mt-2 text-sm text-white/80 hover:text-white hover:underline inline-block"
+                  >
+                    5393 Truxtun Ave, Bakersfield
+                  </a>
                 </div>
               </button>
 
               <button
-                onClick={() => navigate('/location/spa')}
+                onClick={() => handleLocationClick('/location/spa')}
                 className="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:shadow-xl"
               >
                 <div className="relative h-64 w-full">
@@ -57,7 +82,13 @@ const Index = () => {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-2xl font-serif">Niche Beauty Spa</h3>
-                  <p className="mt-2 text-sm text-white/80">5060 California Ave, Bakersfield</p>
+                  <a 
+                    href="#" 
+                    onClick={(e) => handleAddressClick(e, spaAddress)}
+                    className="mt-2 text-sm text-white/80 hover:text-white hover:underline inline-block"
+                  >
+                    5060 California Ave, Bakersfield
+                  </a>
                 </div>
               </button>
             </div>

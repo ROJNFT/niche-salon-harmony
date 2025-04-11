@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -18,7 +17,7 @@ export function HeadSpaSection() {
           <div className="bg-white rounded-lg shadow-sm p-8">
             <div className="relative h-64 w-full overflow-hidden rounded-lg mb-6">
               <img 
-                src="/lovable-uploads/b92d305d-bae7-4f5c-9ca0-426b2d26a14c.png" 
+                src="/lovable-uploads/facespa3.webp" 
                 alt="Head Spa Treatment" 
                 className="object-cover w-full h-full"
               />
